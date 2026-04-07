@@ -676,3 +676,63 @@ footer p {
     .faq-question { font-size: 1.1rem; }
 }
 
+/* TESTIMONIALS SECTION */
+.testimonials-section {
+    padding: 5rem 0;
+    background: #fdfaf7;
+    position: relative;
+}
+.testimonials-grid {
+    column-count: 3;
+    column-gap: 1.5rem;
+    margin-top: 3rem;
+}
+.testimonial-card {
+    background: #ffffff;
+    border: 1px solid rgba(235, 182, 108, 0.3);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    break-inside: avoid;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+.testimonial-img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+.testimonial-stars {
+    color: #f5b041;
+    margin-bottom: 0.8rem;
+    font-size: 0.85rem;
+}
+.testimonial-text {
+    font-size: 0.95rem;
+    color: #4a4a4a;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+.testimonial-author {
+    font-weight: 700;
+    color: var(--secondary);
+    font-family: var(--font-heading);
+    font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+    .testimonials-grid {
+        column-count: 2;
+    }
+}
+@media (max-width: 600px) {
+    .testimonials-grid {
+        column-count: 1;
+    }
+}
