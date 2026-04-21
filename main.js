@@ -99,3 +99,39 @@ window.addEventListener('scroll', () => {
         viewContentFired = true;
     }
 });
+
+// ==========================================
+// PROMO TIMER LOGIC
+// ==========================================
+function startPromoTimer() {
+    const timerDisplay = document.getElementById('countdown');
+    if (!timerDisplay) return;
+
+    function updateTimer() {
+        const now = new Date();
+        const endOfDay = new Date(now);
+        endOfDay.setHours(23, 59, 59, 999);
+
+        let diff = endOfDay - now;
+        if (diff < 0) diff = 0;
+        
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+        timerDisplay.textContent = 
+            String(hours).padStart(2, '0') + ':' + 
+            String(mins).padStart(2, '0') + ':' + 
+            String(secs).padStart(2, '0');
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+}
+
+// Start timer when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startPromoTimer);
+} else {
+    startPromoTimer();
+}
