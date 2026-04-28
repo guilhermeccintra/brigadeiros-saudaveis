@@ -304,7 +304,7 @@ body {
 
 /* BENEFITS SECTION */
 .benefits-section {
-    padding: 3.5rem 0;
+    padding: 3.5rem 0 1rem 0;
 }
 .benefits-grid {
     display: grid;
@@ -518,7 +518,7 @@ body {
 
 /* OFFER SECTION */
 .offer-section {
-    padding: 4rem 0;
+    padding: 1rem 0 4rem 0;
 }
 .urgency-banner {
     background: #FFECB3;
@@ -705,7 +705,7 @@ footer p {
 
 /* TESTIMONIALS SECTION */
 .testimonials-section {
-    padding: 5rem 0 2rem 0;
+    padding: 5rem 0 0 0;
     background: #fdfaf7;
     position: relative;
 }
@@ -713,7 +713,7 @@ footer p {
     width: 100%;
     overflow: hidden;
     position: relative;
-    padding: 1rem 0 1rem 0;
+    padding: 1rem 0 0 0;
 }
 .carousel-track {
     display: flex;
