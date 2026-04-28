@@ -26,6 +26,11 @@
     box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -634,7 +639,6 @@ body {
 .whatsapp-float img {
     width: 60px;
     height: 60px;
-    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
 }
 @media (max-width: 768px) {
     .whatsapp-float {
@@ -713,7 +717,7 @@ footer p {
     width: 100%;
     overflow: hidden;
     position: relative;
-    padding: 1rem 0 0 0;
+    padding: 1rem 0 1.5rem 0;
 }
 .carousel-track {
     display: flex;
