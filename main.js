@@ -1,42 +1,52 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // FAQ Accordion
-    const faqItems = document.querySelectorAll('.faq-item');
+    // Schedule non-critical work when browser is idle to optimize main thread
+    const scheduleWork = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
 
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        question.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
-            faqItems.forEach(i => i.classList.remove('active'));
-            if (!isActive) item.classList.add('active');
+    scheduleWork(() => {
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(i => i.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+            });
         });
     });
 
-    // Reveal animations using IntersectionObserver to avoid forced reflows
-    const reveals = document.querySelectorAll('.reveal-left, .reveal-right');
-    
-    if ('IntersectionObserver' in window) {
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px 0px -150px 0px',
-            threshold: 0
-        };
+    scheduleWork(() => {
+        // Reveal animations using IntersectionObserver
+        const reveals = document.querySelectorAll('.reveal-left, .reveal-right');
+        if ('IntersectionObserver' in window) {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -150px 0px',
+                threshold: 0
+            };
 
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const reveal = entry.target;
-                    if (reveal.classList.contains('reveal-left')) {
-                        reveal.style.animation = 'fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards';
-                    } else if (reveal.classList.contains('reveal-right')) {
-                        reveal.style.animation = 'fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s backwards';
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const reveal = entry.target;
+                        if (reveal.classList.contains('reveal-left')) {
+                            reveal.style.animation = 'fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards';
+                        } else if (reveal.classList.contains('reveal-right')) {
+                            reveal.style.animation = 'fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s backwards';
+                        }
+                        observer.unobserve(reveal);
                     }
-                    observer.unobserve(reveal);
-                }
-            });
-        }, observerOptions);
+                });
+            }, observerOptions);
 
-        reveals.forEach(reveal => revealObserver.observe(reveal));
-    }
+            reveals.forEach(reveal => revealObserver.observe(reveal));
+        }
+    });
+
+    scheduleWork(() => {
+        // Start Promo Timer
+        startPromoTimer();
+    });
 });
 
 // ==========================================
@@ -72,7 +82,12 @@ function sendMetaCAPI(eventName) {
     }).catch(err => console.error('CAPI Error:', err));
 }
 
-sendMetaCAPI('PageView');
+// Defer PageView tracking to free up main thread during initial load
+if (window.requestIdleCallback) {
+    window.requestIdleCallback(() => sendMetaCAPI('PageView'));
+} else {
+    setTimeout(() => sendMetaCAPI('PageView'), 1000);
+}
 
 // Optimize ViewContent scroll tracking with passive listener
 let viewContentFired = false;
@@ -125,10 +140,4 @@ function startPromoTimer() {
 
     setInterval(updateTimer, 1000);
     updateTimer();
-}
-
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', startPromoTimer);
-} else {
-    startPromoTimer();
 }
