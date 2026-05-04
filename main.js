@@ -44,6 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     scheduleWork(() => {
+        // Inject current date into promo bar and bonus section
+        injectCurrentDate();
         // Start Promo Timer
         startPromoTimer();
     });
@@ -155,4 +157,22 @@ function startPromoTimer() {
     updateTimer();
     setInterval(updateTimer, 1000);
     updateTimer();
+}
+
+// ==========================================
+// CURRENT DATE INJECTION
+// ==========================================
+function injectCurrentDate() {
+    const now = new Date();
+    const formatted = now.toLocaleDateString('pt-BR', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+    });
+
+    const promoDate = document.getElementById('promo-date');
+    if (promoDate) promoDate.textContent = formatted;
+
+    const bonusDate = document.getElementById('bonus-date');
+    if (bonusDate) bonusDate.textContent = formatted;
 }
