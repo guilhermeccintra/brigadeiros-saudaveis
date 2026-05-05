@@ -1,22 +1,345 @@
-<!DOCTYPE html><html lang="pt-BR"><head>
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Receitas Saudáveis</title>
-    <style>:root{--primary:#5c351f;--secondary:#9f1e31;--accent:#EBB66C;--bg-light:#FAF5F0;--bg-card:#ffffff;--text-dark:#331A12;--text-light:#7A5B4C;--white:#ffffff;--green:#2B7A0B;--font-heading:'Playfair Display',serif;--font-body:'Outfit',sans-serif;--shadow-soft:0 10px 30px rgba(92, 53, 31, 0.08);--shadow-strong:0 20px 40px rgba(92, 53, 31, 0.15)}*{margin:0;padding:0;box-sizing:border-box}img{max-width:100%;height:auto}html{scroll-behavior:smooth;overflow-x:hidden}body{font-family:var(--font-body);background-color:var(--bg-light);color:var(--text-dark);line-height:1.6;overflow-x:hidden}.container{max-width:1200px;margin:0 auto;padding:0 20px}.highlight{color:var(--secondary);font-weight:700}.darker{color:var(--text-dark);font-weight:800}@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-15px)}100%{transform:translateY(0)}}.fade-up{animation:.8s cubic-bezier(.2,.8,.2,1) backwards fadeUp}.delay-1{animation-delay:.1s}.delay-2{animation-delay:.3s}.delay-3{animation-delay:.5s}.float-animation img{animation:6s ease-in-out infinite float}.hero{min-height:auto;display:flex;align-items:center;padding:3rem 0;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-20%;left:-10%;width:50vw;height:50vw;background:radial-gradient(circle,rgba(235,182,108,.2) 0,rgba(250,245,240,0) 70%);border-radius:50%;z-index:-1}.hero-content{display:flex;flex-direction:column;align-items:center;text-align:center;gap:2rem;max-width:900px;margin:0 auto}.badge{display:inline-block;background:rgba(159,30,49,.1);color:var(--secondary);padding:.5rem 1rem;border-radius:20px;font-weight:600;font-size:.9rem;margin-bottom:1.5rem;letter-spacing:1px;text-transform:uppercase}.headline{font-family:var(--font-heading);font-size:3.5rem;line-height:1.1;color:var(--primary);margin-bottom:1.5rem}.subheadline{font-size:1.25rem;color:var(--text-light);margin-bottom:2.5rem;line-height:1.6}.pricing{margin:0 auto 2rem;background:rgba(255,255,255,.6);border:1px solid rgba(235,182,108,.3);padding:1.5rem;border-radius:12px;backdrop-filter:blur(10px);display:block;width:fit-content}.old-price{font-size:1rem;color:var(--text-light);text-decoration:line-through;margin-bottom:-5px}.new-price{font-size:3rem;font-weight:800;color:var(--green);line-height:1}.hero-image{position:relative;z-index:2;margin:1.5rem 0}.hero-image img{width:100%;max-width:450px;border-radius:20px;box-shadow:var(--shadow-strong);display:block;margin:0 auto;object-fit:cover}.whatsapp-float{position:fixed;bottom:30px;right:30px;z-index:1000}.whatsapp-float img{width:60px;height:60px}@media (max-width:768px){.whatsapp-float{bottom:20px;right:20px}.whatsapp-float img{width:50px;height:50px}}@media (max-width:968px){.headline{font-size:2.8rem}.hero-image{max-width:100%;margin:0 auto 2rem}.hero::before{width:100vw;height:100vw;top:-10%;left:0}}@media (max-width:576px){.headline{font-size:2.2rem}.subheadline{font-size:1.1rem}.pricing{width:100%;padding:1rem}}.fa-solid{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:var(--fa-display,inline-block);font-style:normal;font-variant:normal;line-height:1;text-rendering:auto}.fa-solid{font-family:"Font Awesome 6 Free"}.fa-clock:before{content:"\f017"}:host,:root{--fa-style-family-brands:"Font Awesome 6 Brands";--fa-font-brands:normal 400 1em/1 "Font Awesome 6 Brands"}:host,:root{--fa-font-regular:normal 400 1em/1 "Font Awesome 6 Free"}@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:400;font-display:block;src:url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-regular-400.woff2) format("woff2"),url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-regular-400.ttf) format("truetype")}:host,:root{--fa-style-family-classic:"Font Awesome 6 Free";--fa-font-solid:normal 900 1em/1 "Font Awesome 6 Free"}@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:block;src:url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2) format("woff2"),url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.ttf) format("truetype")}.fa-solid{font-weight:900}</style>
+    <style>
+        :root {
+            --primary: #5c351f;
+            --secondary: #9f1e31;
+            --accent: #EBB66C;
+            --bg-light: #FAF5F0;
+            --bg-card: #ffffff;
+            --text-dark: #331A12;
+            --text-light: #7A5B4C;
+            --white: #ffffff;
+            --green: #2B7A0B;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Outfit', sans-serif;
+            --shadow-soft: 0 10px 30px rgba(92, 53, 31, 0.08);
+            --shadow-strong: 0 20px 40px rgba(92, 53, 31, 0.15)
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        img {
+            max-width: 100%;
+            height: auto
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px
+        }
+
+        .highlight {
+            color: var(--secondary);
+            font-weight: 700
+        }
+
+        .darker {
+            color: var(--text-dark);
+            font-weight: 800
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-15px)
+            }
+
+            100% {
+                transform: translateY(0)
+            }
+        }
+
+        .fade-up {
+            animation: .8s cubic-bezier(.2, .8, .2, 1) backwards fadeUp
+        }
+
+        .delay-1 {
+            animation-delay: .1s
+        }
+
+        .delay-2 {
+            animation-delay: .3s
+        }
+
+        .delay-3 {
+            animation-delay: .5s
+        }
+
+        .float-animation img {
+            animation: 6s ease-in-out infinite float
+        }
+
+        .hero {
+            min-height: auto;
+            display: flex;
+            align-items: center;
+            padding: 3rem 0;
+            position: relative;
+            overflow: hidden
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -10%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(235, 182, 108, .2) 0, rgba(250, 245, 240, 0) 70%);
+            border-radius: 50%;
+            z-index: -1
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(159, 30, 49, .1);
+            color: var(--secondary);
+            padding: .5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: .9rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase
+        }
+
+        .headline {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            line-height: 1.1;
+            color: var(--primary);
+            margin-bottom: 1.5rem
+        }
+
+        .subheadline {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            line-height: 1.6
+        }
+
+        .pricing {
+            margin: 0 auto 2rem;
+            background: rgba(255, 255, 255, .6);
+            border: 1px solid rgba(235, 182, 108, .3);
+            padding: 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            display: block;
+            width: fit-content
+        }
+
+        .old-price {
+            font-size: 1rem;
+            color: var(--text-light);
+            text-decoration: line-through;
+            margin-bottom: -5px
+        }
+
+        .new-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--green);
+            line-height: 1
+        }
+
+        .hero-image {
+            position: relative;
+            z-index: 2;
+            margin: 1.5rem 0
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-strong);
+            display: block;
+            margin: 0 auto;
+            object-fit: cover
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000
+        }
+
+        .whatsapp-float img {
+            width: 60px;
+            height: 60px
+        }
+
+        @media (max-width:768px) {
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px
+            }
+
+            .whatsapp-float img {
+                width: 50px;
+                height: 50px
+            }
+        }
+
+        @media (max-width:968px) {
+            .headline {
+                font-size: 2.8rem
+            }
+
+            .hero-image {
+                max-width: 100%;
+                margin: 0 auto 2rem
+            }
+
+            .hero::before {
+                width: 100vw;
+                height: 100vw;
+                top: -10%;
+                left: 0
+            }
+        }
+
+        @media (max-width:576px) {
+            .headline {
+                font-size: 2.2rem
+            }
+
+            .subheadline {
+                font-size: 1.1rem
+            }
+
+            .pricing {
+                width: 100%;
+                padding: 1rem
+            }
+        }
+
+        .fa-solid {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: var(--fa-display, inline-block);
+            font-style: normal;
+            font-variant: normal;
+            line-height: 1;
+            text-rendering: auto
+        }
+
+        .fa-solid {
+            font-family: "Font Awesome 6 Free"
+        }
+
+        .fa-clock:before {
+            content: "\f017"
+        }
+
+        :host,
+        :root {
+            --fa-style-family-brands: "Font Awesome 6 Brands";
+            --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands"
+        }
+
+        :host,
+        :root {
+            --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free"
+        }
+
+        @font-face {
+            font-family: "Font Awesome 6 Free";
+            font-style: normal;
+            font-weight: 400;
+            font-display: block;
+            src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-regular-400.woff2) format("woff2"), url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-regular-400.ttf) format("truetype")
+        }
+
+        :host,
+        :root {
+            --fa-style-family-classic: "Font Awesome 6 Free";
+            --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free"
+        }
+
+        @font-face {
+            font-family: "Font Awesome 6 Free";
+            font-style: normal;
+            font-weight: 900;
+            font-display: block;
+            src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2) format("woff2"), url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.ttf) format("truetype")
+        }
+
+        .fa-solid {
+            font-weight: 900
+        }
+    </style>
     <link rel="preload" as="image" href="assets/mockup02.webp">
-    
+
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-    </head>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"
+        media="print" onload="this.media='all'">
+</head>
 
 <body>
     <!-- Promo Timer Bar -->
-    <div class="promo-bar" style="background-color: #9F1E31; color: white; padding: 10px; text-align: center; position: sticky; top: 0; z-index: 1000; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-        <i class="fa-solid fa-clock" style="margin-right: 8px;"></i> Oferta com desconto + 3 bônus exclusivos encerra em <span id="promo-date"></span>:
-        <span id="countdown" style="background: rgba(0,0,0,0.2); padding: 4px 8px; border-radius: 4px; font-family: 'Outfit', sans-serif; font-size: 1.1em; letter-spacing: 1px; margin-left: 5px;">00:00:00</span>
+    <div class="promo-bar"
+        style="background-color: #9F1E31; color: white; padding: 10px; text-align: center; position: sticky; top: 0; z-index: 1000; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+        <i class="fa-solid fa-clock" style="margin-right: 8px;"></i> Oferta com desconto + 3 bônus exclusivos encerra em
+        <span id="promo-date"></span>:
+        <span id="countdown"
+            style="background: rgba(0,0,0,0.2); padding: 4px 8px; border-radius: 4px; font-family: 'Outfit', sans-serif; font-size: 1.1em; letter-spacing: 1px; margin-left: 5px;">00:00:00</span>
     </div>
 
     <!-- Hero Section -->
@@ -24,492 +347,724 @@
         <div class="container hero-content">
             <div class="hero-text">
                 <span class="badge">Brigadeiros, bolos, tortas, pudins e geléias</span>
-                <h1 class="headline">100 Receitas Doces Saudáveis para Comer <span class="highlight">Sem Culpa</span></h1>
-                <p class="subheadline fade-up delay-1"><span class="highlight">Sem açúcar, sem glúten e zero lactose</span></p>
+                <h1 class="headline">100 Receitas Doces Saudáveis para Comer <span class="highlight">Sem Culpa</span>
+                </h1>
+                <p class="subheadline fade-up delay-1"><span class="highlight">Sem açúcar, sem glúten e zero
+                        lactose</span></p>
 
                 <div class="hero-image inline-hero-image float-animation">
-                    <img src="assets/mockup02.webp" alt="Mockup" width="1000" height="1000" fetchpriority="high" loading="eager" style="width: 100%; height: auto;">
-                </div><div class="faq-accordion" style="width: 100%; max-width: 800px; margin: 2rem auto 2rem auto; text-align: left;">
-                <!-- Módulo 1 -->
-                <div class="faq-item">
-                    <div class="faq-question">BRIGADEIROS SAUDÁVEIS GOURMET <i class="fa-solid fa-chevron-down"></i></div>
-                    <div class="faq-answer">
-                        <ul style="list-style: none; padding-left: 0; line-height: 1.8; color: #555;">
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Brigadeiro Gourmet de Cacau com Biomassa de Banana Verde</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Brigadeiro de Coco Cremoso com Toque de Baunilha</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Brigadeiro Tradicional Saudável de Cacau</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Brigadeiro de Colher Fit de Chocolate Intenso</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Brigadeiro Branco Saudável Tipo Beijinho</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Brigadeiro de Leite em Pó Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Brigadeiro de Paçoca Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Brigadeiro de Café Gourmet</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Brigadeiro de Avelã Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Brigadeiro de Pistache Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Brigadeiro de Morango Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Brigadeiro Romeu e Julieta Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Brigadeiro de Limão Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Brigadeiro de Maracujá Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Brigadeiro de Banana com Canela</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Brigadeiro de Churros Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Brigadeiro de Coco Queimado Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Brigadeiro de Cookies and Cream Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Brigadeiro de Chocolate Branco Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Brigadeiro Meio Amargo Saudável</li>
-                        </ul>
+                    <img src="assets/mockup02.webp" alt="Mockup" width="1000" height="1000" fetchpriority="high"
+                        loading="eager" style="width: 100%; height: auto;">
+                </div>
+                <div class="faq-accordion"
+                    style="width: 100%; max-width: 800px; margin: 2rem auto 2rem auto; text-align: left;">
+                    <!-- Módulo 1 -->
+                    <div class="faq-item">
+                        <div class="faq-question">BRIGADEIROS SAUDÁVEIS GOURMET <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <ul style="list-style: none; padding-left: 0; line-height: 1.8; color: #555;">
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Brigadeiro Gourmet de Cacau com Biomassa de Banana Verde</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Brigadeiro de Coco Cremoso com Toque de Baunilha</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Brigadeiro Tradicional Saudável de Cacau</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Brigadeiro de Colher Fit de Chocolate Intenso</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Brigadeiro Branco Saudável Tipo Beijinho</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Brigadeiro de Leite em Pó Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Brigadeiro de Paçoca Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Brigadeiro de Café Gourmet</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Brigadeiro de Avelã Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Brigadeiro de Pistache Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Brigadeiro de Morango Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Brigadeiro Romeu e Julieta Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Brigadeiro de Limão Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Brigadeiro de Maracujá Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Brigadeiro de Banana com Canela</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Brigadeiro de Churros Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Brigadeiro de Coco Queimado Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Brigadeiro de Cookies and Cream Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Brigadeiro de Chocolate Branco Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Brigadeiro Meio Amargo Saudável</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Módulo 2 -->
+                    <div class="faq-item">
+                        <div class="faq-question">BOLOS SAUDÁVEIS FUNCIONAIS <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <ul style="list-style: none; padding-left: 0; line-height: 1.8; color: #555;">
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Bolo de Cenoura Saudável com Cobertura de Cacau</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Bolo de Banana com Canela Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Bolo de Laranja Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Bolo de Maçã com Canela Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Bolo de Fubá Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Bolo de Coco Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Bolo Formigueiro Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Bolo de Canela Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Bolo de Chocolate com Cobertura Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Bolo de Abacaxi Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Bolo de Limão Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Bolo de Milho Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Bolo Mármore Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Bolo Simples de Baunilha Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Bolo de Café Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Bolo de Frutas Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Bolo de Coco com Fubá Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Bolo de Baunilha com Canela Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Bolo de Laranja com Fubá Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Bolo de Milho com Coco Saudável</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Módulo 3 -->
+                    <div class="faq-item">
+                        <div class="faq-question">TORTAS SAUDÁVEIS ESPECIAIS <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <ul style="list-style: none; padding-left: 0; line-height: 1.8; color: #555;">
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Torta de Morango Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Torta de Maracujá Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Torta de Limão Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Torta de Framboesa Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Torta de Pera Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Torta de Banana com Canela Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Torta de Maçã Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Torta de Limão Siciliano Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Torta de Kiwi Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Torta de Uva Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Torta de Pêssego Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Torta de Maracujá e Limão Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Torta de Framboesa e Chocolate Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Torta de Chocolate e Nozes Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Torta de Limão e Coco Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Torta de Frutas Vermelhas Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Torta de Laranja e Amêndoas Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Torta de Café Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Torta de Coco e Frutas Tropicais Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Torta de Ameixa Saudável</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Módulo 4 -->
+                    <div class="faq-item">
+                        <div class="faq-question">PUDINS SAUDÁVEIS CREMOSOS <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <ul style="list-style: none; padding-left: 0; line-height: 1.8; color: #555;">
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Pudim Tradicional Saudável de Leite</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Pudim de Leite Condensado Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Pudim de Coco Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Pudim de Baunilha Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Pudim de Chocolate Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Pudim de Café Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Pudim de Milho Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Pudim de Maracujá Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Pudim de Limão Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Pudim de Queijo Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Pudim de Laranja Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Pudim de Baunilha com Calda Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Pudim de Coco Queimado Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Pudim de Doce de Leite Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Pudim de Canela Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Pudim de Leite com Coco Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Pudim de Queijo com Coco Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Pudim de Abacaxi Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Pudim de Milho com Coco Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Pudim de Leite com Canela Saudável</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Módulo 5 -->
+                    <div class="faq-item">
+                        <div class="faq-question">GELÉIAS NATURAIS E ARTESANAIS <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <ul style="list-style: none; padding-left: 0; line-height: 1.8; color: #555;">
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Geléia de Morango Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Geléia de Uva Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Geléia de Maracujá Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Geléia de Goiaba Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Geléia de Ameixa Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Geléia de Amora Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Geléia de Pêssego Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Geléia de Laranja Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Geléia de Maçã Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Geléia de Frutas Vermelhas Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Geléia de Pera Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Geléia de Abacaxi Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Geléia de Tangerina Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Geléia de Pêssego com Maçã Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Geléia de Banana com Canela Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Geléia de Manga Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Geléia de Figo Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Geléia de Caju Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Geléia de Mirtilo Saudável</li>
+                                <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i>
+                                    Geléia de Damasco Saudável</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Módulo 2 -->
-                <div class="faq-item">
-                    <div class="faq-question">BOLOS SAUDÁVEIS FUNCIONAIS <i class="fa-solid fa-chevron-down"></i></div>
-                    <div class="faq-answer">
-                        <ul style="list-style: none; padding-left: 0; line-height: 1.8; color: #555;">
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Bolo de Cenoura Saudável com Cobertura de Cacau</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Bolo de Banana com Canela Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Bolo de Laranja Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Bolo de Maçã com Canela Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Bolo de Fubá Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Bolo de Coco Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Bolo Formigueiro Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Bolo de Canela Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Bolo de Chocolate com Cobertura Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Bolo de Abacaxi Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Bolo de Limão Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Bolo de Milho Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Bolo Mármore Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Bolo Simples de Baunilha Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Bolo de Café Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Bolo de Frutas Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Bolo de Coco com Fubá Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Bolo de Baunilha com Canela Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Bolo de Laranja com Fubá Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Bolo de Milho com Coco Saudável</li>
-                        </ul>
-                    </div>
-                </div>
 
-                <!-- Módulo 3 -->
-                <div class="faq-item">
-                    <div class="faq-question">TORTAS SAUDÁVEIS ESPECIAIS <i class="fa-solid fa-chevron-down"></i></div>
-                    <div class="faq-answer">
-                        <ul style="list-style: none; padding-left: 0; line-height: 1.8; color: #555;">
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Torta de Morango Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Torta de Maracujá Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Torta de Limão Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Torta de Framboesa Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Torta de Pera Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Torta de Banana com Canela Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Torta de Maçã Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Torta de Limão Siciliano Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Torta de Kiwi Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Torta de Uva Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Torta de Pêssego Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Torta de Maracujá e Limão Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Torta de Framboesa e Chocolate Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Torta de Chocolate e Nozes Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Torta de Limão e Coco Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Torta de Frutas Vermelhas Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Torta de Laranja e Amêndoas Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Torta de Café Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Torta de Coco e Frutas Tropicais Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Torta de Ameixa Saudável</li>
-                        </ul>
-                    </div>
-                </div>
 
-                <!-- Módulo 4 -->
-                <div class="faq-item">
-                    <div class="faq-question">PUDINS SAUDÁVEIS CREMOSOS <i class="fa-solid fa-chevron-down"></i></div>
-                    <div class="faq-answer">
-                        <ul style="list-style: none; padding-left: 0; line-height: 1.8; color: #555;">
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Pudim Tradicional Saudável de Leite</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Pudim de Leite Condensado Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Pudim de Coco Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Pudim de Baunilha Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Pudim de Chocolate Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Pudim de Café Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Pudim de Milho Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Pudim de Maracujá Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Pudim de Limão Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Pudim de Queijo Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Pudim de Laranja Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Pudim de Baunilha com Calda Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Pudim de Coco Queimado Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Pudim de Doce de Leite Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Pudim de Canela Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Pudim de Leite com Coco Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Pudim de Queijo com Coco Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Pudim de Abacaxi Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Pudim de Milho com Coco Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Pudim de Leite com Canela Saudável</li>
-                        </ul>
-                    </div>
-                </div>
 
-                <!-- Módulo 5 -->
-                <div class="faq-item">
-                    <div class="faq-question">GELÉIAS NATURAIS E ARTESANAIS <i class="fa-solid fa-chevron-down"></i></div>
-                    <div class="faq-answer">
-                        <ul style="list-style: none; padding-left: 0; line-height: 1.8; color: #555;">
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Geléia de Morango Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Geléia de Uva Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Geléia de Maracujá Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Geléia de Goiaba Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Geléia de Ameixa Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Geléia de Amora Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Geléia de Pêssego Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Geléia de Laranja Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Geléia de Maçã Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Geléia de Frutas Vermelhas Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Geléia de Pera Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Geléia de Abacaxi Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Geléia de Tangerina Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Geléia de Pêssego com Maçã Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Geléia de Banana com Canela Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Geléia de Manga Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Geléia de Figo Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Geléia de Caju Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Geléia de Mirtilo Saudável</li>
-                            <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Geléia de Damasco Saudável</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
 
-                
-                
-                
-                
-                
 
-                
 
-                
-                
+
+
+
+
             </div>
         </div>
     </header>
-<main>
-    <!-- Product Inside Carousel -->
-    <section class="recipes-carousel-section" style="overflow: hidden; padding: 3rem 0; background: var(--bg-light);">
-        <div class="container text-center" style="margin-bottom: 2rem;">
-            <h2 class="section-title">Veja <span class="highlight">por dentro</span> do produto</h2>
-        </div>
-        <div class="carousel-wrapper" style="background: transparent; padding: 0 0 1rem 0;">
-            <div class="carousel-track" style="animation-duration: 72s;">
-                <!-- Set 1 -->
-                <img src="assets/100RECEITAS-01.webp" alt="Página 1" class="recipe-img" width="500" height="500">
-                <img src="assets/100RECEITAS-02.webp" alt="Página 2" class="recipe-img" width="500" height="500">
-                <img src="assets/100RECEITAS-03.webp" alt="Página 3" class="recipe-img" width="500" height="500">
-                <img src="assets/100RECEITAS-04.webp" alt="Página 4" class="recipe-img" width="500" height="500">
-                <img src="assets/100RECEITAS-05.webp" alt="Página 5" class="recipe-img" width="500" height="500">
-                <img src="assets/100RECEITAS-06.webp" alt="Página 6" class="recipe-img" width="500" height="500">
-                <img src="assets/100RECEITAS-07.webp" alt="Página 7" class="recipe-img" width="500" height="500">
-                <img src="assets/100RECEITAS-08.webp" alt="Página 8" class="recipe-img" width="500" height="500">
-                <img src="assets/100RECEITAS-09.webp" alt="Página 9" class="recipe-img" width="500" height="500">
-                <img src="assets/100RECEITAS-10.webp" alt="Página 10" class="recipe-img" width="500" height="500">
-                <img src="assets/100RECEITAS-11.webp" alt="Página 11" class="recipe-img" width="500" height="500">
-                <img src="assets/100RECEITAS-12.webp" alt="Página 12" class="recipe-img" width="500" height="500">
-                <!-- Set 2 -->
-                <img src="assets/100RECEITAS-01.webp" alt="Página 1" class="recipe-img" width="500" height="500">
-                <img src="assets/100RECEITAS-02.webp" alt="Página 2" class="recipe-img" width="500" height="500">
-                <img src="assets/100RECEITAS-03.webp" alt="Página 3" class="recipe-img" width="500" height="500">
-                <img src="assets/100RECEITAS-04.webp" alt="Página 4" class="recipe-img" width="500" height="500">
-                <img src="assets/100RECEITAS-05.webp" alt="Página 5" class="recipe-img" width="500" height="500">
-                <img src="assets/100RECEITAS-06.webp" alt="Página 6" class="recipe-img" width="500" height="500">
-                <img src="assets/100RECEITAS-07.webp" alt="Página 7" class="recipe-img" width="500" height="500">
-                <img src="assets/100RECEITAS-08.webp" alt="Página 8" class="recipe-img" width="500" height="500">
-                <img src="assets/100RECEITAS-09.webp" alt="Página 9" class="recipe-img" width="500" height="500">
-                <img src="assets/100RECEITAS-10.webp" alt="Página 10" class="recipe-img" width="500" height="500">
-                <img src="assets/100RECEITAS-11.webp" alt="Página 11" class="recipe-img" width="500" height="500">
-                <img src="assets/100RECEITAS-12.webp" alt="Página 12" class="recipe-img" width="500" height="500">
+    <main>
+        <!-- Product Inside Carousel -->
+        <section class="recipes-carousel-section"
+            style="overflow: hidden; padding: 3rem 0; background: var(--bg-light);">
+            <div class="container text-center" style="margin-bottom: 2rem;">
+                <h2 class="section-title">Veja <span class="highlight">por dentro</span> do produto</h2>
             </div>
-        </div>
-    </section>
+            <div class="carousel-wrapper" style="background: transparent; padding: 0 0 1rem 0;">
+                <div class="carousel-track" style="animation-duration: 72s;">
+                    <!-- Set 1 -->
+                    <img src="assets/100RECEITAS-01.webp" alt="Página 1" class="recipe-img" width="500" height="500">
+                    <img src="assets/100RECEITAS-02.webp" alt="Página 2" class="recipe-img" width="500" height="500">
+                    <img src="assets/100RECEITAS-03.webp" alt="Página 3" class="recipe-img" width="500" height="500">
+                    <img src="assets/100RECEITAS-04.webp" alt="Página 4" class="recipe-img" width="500" height="500">
+                    <img src="assets/100RECEITAS-05.webp" alt="Página 5" class="recipe-img" width="500" height="500">
+                    <img src="assets/100RECEITAS-06.webp" alt="Página 6" class="recipe-img" width="500" height="500">
+                    <img src="assets/100RECEITAS-07.webp" alt="Página 7" class="recipe-img" width="500" height="500">
+                    <img src="assets/100RECEITAS-08.webp" alt="Página 8" class="recipe-img" width="500" height="500">
+                    <img src="assets/100RECEITAS-09.webp" alt="Página 9" class="recipe-img" width="500" height="500">
+                    <img src="assets/100RECEITAS-10.webp" alt="Página 10" class="recipe-img" width="500" height="500">
+                    <img src="assets/100RECEITAS-11.webp" alt="Página 11" class="recipe-img" width="500" height="500">
+                    <img src="assets/100RECEITAS-12.webp" alt="Página 12" class="recipe-img" width="500" height="500">
+                    <!-- Set 2 -->
+                    <img src="assets/100RECEITAS-01.webp" alt="Página 1" class="recipe-img" width="500" height="500">
+                    <img src="assets/100RECEITAS-02.webp" alt="Página 2" class="recipe-img" width="500" height="500">
+                    <img src="assets/100RECEITAS-03.webp" alt="Página 3" class="recipe-img" width="500" height="500">
+                    <img src="assets/100RECEITAS-04.webp" alt="Página 4" class="recipe-img" width="500" height="500">
+                    <img src="assets/100RECEITAS-05.webp" alt="Página 5" class="recipe-img" width="500" height="500">
+                    <img src="assets/100RECEITAS-06.webp" alt="Página 6" class="recipe-img" width="500" height="500">
+                    <img src="assets/100RECEITAS-07.webp" alt="Página 7" class="recipe-img" width="500" height="500">
+                    <img src="assets/100RECEITAS-08.webp" alt="Página 8" class="recipe-img" width="500" height="500">
+                    <img src="assets/100RECEITAS-09.webp" alt="Página 9" class="recipe-img" width="500" height="500">
+                    <img src="assets/100RECEITAS-10.webp" alt="Página 10" class="recipe-img" width="500" height="500">
+                    <img src="assets/100RECEITAS-11.webp" alt="Página 11" class="recipe-img" width="500" height="500">
+                    <img src="assets/100RECEITAS-12.webp" alt="Página 12" class="recipe-img" width="500" height="500">
+                </div>
+            </div>
+        </section>
 
-    <section class="ideal-for-section" style="background: #ffffff; padding: 3rem 0; border-top: 1px solid rgba(235,182,108,0.2); border-bottom: 1px solid rgba(235,182,108,0.2);">
-        <div class="container">
-            <div class="ideal-wrapper glass-panel">
-                <div class="ideal-content">
-                    <h2 class="section-title text-center">Ideal pra você que deseja:</h2>
-                    <div class="ideal-grid">
-                        <div class="ideal-item" style="align-items: flex-start;">
-                            <div class="ideal-icon" style="margin-top: 5px;">🍮</div>
-                            <div class="ideal-text">
-                                <span style="display: block; font-weight: 700; margin-bottom: 4px; color: var(--primary);">Manter a dieta sem abrir mão do doce</span>
-                                <span style="font-size: 0.95em; color: var(--text-light); line-height: 1.4; display: block;">Desfrutar de sobremesas deliciosas sem sair do plano alimentar ou comprometer seus resultados.</span>
+        <section class="ideal-for-section"
+            style="background: #ffffff; padding: 3rem 0; border-top: 1px solid rgba(235,182,108,0.2); border-bottom: 1px solid rgba(235,182,108,0.2);">
+            <div class="container">
+                <div class="ideal-wrapper glass-panel">
+                    <div class="ideal-content">
+                        <h2 class="section-title text-center">Ideal pra você que deseja:</h2>
+                        <div class="ideal-grid">
+                            <div class="ideal-item" style="align-items: flex-start;">
+                                <div class="ideal-icon" style="margin-top: 5px;">🍮</div>
+                                <div class="ideal-text">
+                                    <span
+                                        style="display: block; font-weight: 700; margin-bottom: 4px; color: var(--primary);">Manter
+                                        a dieta sem abrir mão do doce</span>
+                                    <span
+                                        style="font-size: 0.95em; color: var(--text-light); line-height: 1.4; display: block;">Desfrutar
+                                        de sobremesas deliciosas sem sair do plano alimentar ou comprometer seus
+                                        resultados.</span>
+                                </div>
+                            </div>
+                            <div class="ideal-item" style="align-items: flex-start;">
+                                <div class="ideal-icon" style="margin-top: 5px;">👩‍👧</div>
+                                <div class="ideal-text">
+                                    <span
+                                        style="display: block; font-weight: 700; margin-bottom: 4px; color: var(--primary);">Oferecer
+                                        doces mais saudáveis para sua família</span>
+                                    <span
+                                        style="font-size: 0.95em; color: var(--text-light); line-height: 1.4; display: block;">Preparar
+                                        receitas sem açúcar, sem glúten e sem lactose, mais seguras e nutritivas para
+                                        crianças e familiares.</span>
+                                </div>
+                            </div>
+                            <div class="ideal-item" style="align-items: flex-start;">
+                                <div class="ideal-icon" style="margin-top: 5px;">🩺</div>
+                                <div class="ideal-text">
+                                    <span
+                                        style="display: block; font-weight: 700; margin-bottom: 4px; color: var(--primary);">Consumir
+                                        doces mesmo com restrições ao açúcar</span>
+                                    <span
+                                        style="font-size: 0.95em; color: var(--text-light); line-height: 1.4; display: block;">Ter
+                                        opções pensadas para quem precisa evitar açúcar, sem abrir mão do sabor e da
+                                        praticidade.</span>
+                                </div>
+                            </div>
+                            <div class="ideal-item" style="align-items: flex-start;">
+                                <div class="ideal-icon" style="margin-top: 5px;">💰</div>
+                                <div class="ideal-text">
+                                    <span
+                                        style="display: block; font-weight: 700; margin-bottom: 4px; color: var(--primary);">Faturar
+                                        com doces saudáveis em casa</span>
+                                    <span
+                                        style="font-size: 0.95em; color: var(--text-light); line-height: 1.4; display: block;">Produzir
+                                        sobremesas com alto valor percebido para vender e aproveitar um mercado cada vez
+                                        mais em crescimento.</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="ideal-item" style="align-items: flex-start;">
-                            <div class="ideal-icon" style="margin-top: 5px;">👩‍👧</div>
-                            <div class="ideal-text">
-                                <span style="display: block; font-weight: 700; margin-bottom: 4px; color: var(--primary);">Oferecer doces mais saudáveis para sua família</span>
-                                <span style="font-size: 0.95em; color: var(--text-light); line-height: 1.4; display: block;">Preparar receitas sem açúcar, sem glúten e sem lactose, mais seguras e nutritivas para crianças e familiares.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="benefits-section" style="background: #fdfaf7; padding: 3rem 0;">
+            <div class="container">
+                <h2 class="section-title text-center">Por que essas receitas são para você?</h2>
+
+                <div class="benefits-grid">
+                    <div class="benefit-card hover-glow">
+                        <i class="fa-solid fa-heart-circle-check icon-b"></i>
+                        <h3>Saúde sem abrir mão do sabor <span
+                                style="display: block; font-size: 0.85rem; font-weight: 500; opacity: 0.85; margin-top: 5px; color: var(--text-light);">(ideal
+                                para quem está de dieta ou quer reduzir o açúcar)</span></h3>
+                        <p>Substituímos ingredientes tradicionais por opções mais saudáveis, para você continuar comendo
+                            doce sem culpa ou prejuízo nos resultados.</p>
+                    </div>
+                    <div class="benefit-card hover-glow">
+                        <i class="fa-solid fa-basket-shopping icon-b"></i>
+                        <h3>Ingredientes simples para o dia a dia <span
+                                style="display: block; font-size: 0.85rem; font-weight: 500; opacity: 0.85; margin-top: 5px; color: var(--text-light);">(perfeito
+                                para mães e famílias)</span></h3>
+                        <p>Receitas feitas com ingredientes acessíveis, fáceis de encontrar e ideais para preparar
+                            opções mais seguras e nutritivas em casa.</p>
+                    </div>
+                    <div class="benefit-card hover-glow">
+                        <i class="fa-solid fa-leaf icon-b"></i>
+                        <h3>Opções pensadas para quem não pode consumir açúcar</h3>
+                        <p>Receitas adaptadas para quem precisa evitar açúcar, sem abrir mão do prazer de comer um doce
+                            saboroso.</p>
+                    </div>
+                    <div class="benefit-card hover-glow">
+                        <i class="fa-solid fa-sack-dollar icon-b"></i>
+                        <h3>Praticidade para produzir e até vender</h3>
+                        <p>Preparos rápidos e fáceis que permitem fazer em casa com agilidade, seja para consumo próprio
+                            ou para gerar renda com doces saudáveis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="proof-section">
+            <div class="container proof-grid">
+                <div class="proof-img">
+                    <img src="assets/torta.webp" alt="Delicioso doces saudáveis" width="1024" height="1024"
+                        loading="lazy" decoding="async" style="width: 100%; height: auto; display: block;">
+
+                </div>
+                <div class="proof-text">
+                    <h2 class="section-title">Sinta o sabor de um doce de verdade, <span class="highlight">sem culpa,
+                            sem restrições e sem abrir mão do prazer</span></h2>
+                    <p>Imagine morder um doce cremoso, com textura perfeita e sabor equilibrado…<br>
+                        Sem gosto artificial, sem amargor e sem aquele "sabor fit" ruim.</p>
+
+                    <p style="font-weight: 600; color: var(--primary);">Isso não é "doce saudável sem graça".<br>
+                        É doce de verdade, só que feito da forma certa.</p>
+
+                    <div class="features-list">
+                        <div class="feature-item"><i class="fa-solid fa-check"></i> Sem açúcar refinado</div>
+                        <div class="feature-item"><i class="fa-solid fa-check"></i> Sem glúten</div>
+                        <div class="feature-item"><i class="fa-solid fa-check"></i> Zero lactose</div>
+                        <div class="feature-item"><i class="fa-solid fa-check"></i> Fácil e rápido de fazer</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Recipes Carousel -->
+        <section class="recipes-carousel-section"
+            style="overflow: hidden; padding: 3rem 0; background: var(--bg-light);">
+            <div class="container text-center" style="margin-bottom: 2rem;">
+                <h2 class="section-title">Olha o que você vai conseguir preparar com essa <span
+                        class="highlight">coleção de receitas</span></h2>
+                <p class="subheadline fade-up delay-1"
+                    style="font-size: 1.2rem; color: var(--text-dark); max-width: 700px; margin: 1rem auto 0 auto;">
+                    Doces incríveis, fáceis de fazer e pensados para eliminar o açúcar sem abrir mão do sabor</p>
+            </div>
+            <div class="carousel-wrapper" style="background: transparent; padding: 0 0 1rem 0;">
+                <div class="carousel-track" style="animation-duration: 48s;">
+                    <!-- Set 1 -->
+                    <img src="assets/receita01.webp" alt="Receita 1" class="recipe-img" width="500" height="500">
+                    <img src="assets/receita02.webp" alt="Receita 2" class="recipe-img" width="500" height="500">
+                    <img src="assets/receita03.webp" alt="Receita 3" class="recipe-img" width="500" height="500">
+                    <img src="assets/receita04.webp" alt="Receita 4" class="recipe-img" width="500" height="500">
+                    <img src="assets/receita05.webp" alt="Receita 5" class="recipe-img" width="500" height="500">
+                    <img src="assets/receita06.webp" alt="Receita 6" class="recipe-img" width="500" height="500">
+                    <img src="assets/receita07.webp" alt="Receita 7" class="recipe-img" width="500" height="500">
+                    <img src="assets/receita08.webp" alt="Receita 8" class="recipe-img" width="500" height="500">
+                    <!-- Set 2 -->
+                    <img src="assets/receita01.webp" alt="Receita 1" class="recipe-img" width="500" height="500">
+                    <img src="assets/receita02.webp" alt="Receita 2" class="recipe-img" width="500" height="500">
+                    <img src="assets/receita03.webp" alt="Receita 3" class="recipe-img" width="500" height="500">
+                    <img src="assets/receita04.webp" alt="Receita 4" class="recipe-img" width="500" height="500">
+                    <img src="assets/receita05.webp" alt="Receita 5" class="recipe-img" width="500" height="500">
+                    <img src="assets/receita06.webp" alt="Receita 6" class="recipe-img" width="500" height="500">
+                    <img src="assets/receita07.webp" alt="Receita 7" class="recipe-img" width="500" height="500">
+                    <img src="assets/receita08.webp" alt="Receita 8" class="recipe-img" width="500" height="500">
+                </div>
+            </div>
+        </section>
+        <section class="bonus-section" id="bonus">
+            <div class="container">
+                <div class="text-center">
+                    <span class="badge"
+                        style="background: rgba(235, 182, 108, 0.2); color: var(--accent); margin-bottom: 1rem;">OFERTA
+                        IMPERDÍVEL</span>
+                    <h2 class="section-title text-white">Garantindo agora, você leva <span class="highlight-gold">3
+                            BÔNUS
+                            EXCLUSIVOS</span></h2>
+                    <p style="color: rgba(255,255,255,0.85); font-size: 1rem; font-weight: 600; margin-top: 0.5rem;">⏰
+                        Encerra em: <span id="bonus-date"></span></p>
+                </div>
+
+                <div class="bonus-grid-premium">
+                    <!-- Bonus 1 -->
+                    <div class="bonus-card-premium">
+                        <div class="bonus-icon-wrapper"
+                            style="background: linear-gradient(135deg, var(--accent), #d4953e); padding: 5px;">
+                            <img src="assets/guia_de_substituicoes.webp" alt="Guia de Substituições Inteligentes"
+                                width="500" height="500" loading="lazy" decoding="async"
+                                style="width: 100%; height: auto; aspect-ratio: 1/1; object-fit: contain; border-radius: 10px; display: block;">
+                        </div>
+                        <div class="bonus-content">
+                            <h3>Guia de Substituições Inteligentes</h3>
+                            <p>Aprenda como adaptar qualquer receita para uma versão mais saudável, garantindo sabor e
+                                nutrição em suas criações culinárias</p>
+                            <div style="margin-top: 10px; font-size: 1.1rem; font-weight: 700;">
+                                <span style="text-decoration: line-through; color: rgba(255,255,255,0.5); font-size: 0.9em; margin-right: 8px;">R$ 47,00</span>
+                                <span style="color: var(--accent);">R$ 00,00</span>
                             </div>
                         </div>
-                        <div class="ideal-item" style="align-items: flex-start;">
-                            <div class="ideal-icon" style="margin-top: 5px;">🩺</div>
-                            <div class="ideal-text">
-                                <span style="display: block; font-weight: 700; margin-bottom: 4px; color: var(--primary);">Consumir doces mesmo com restrições ao açúcar</span>
-                                <span style="font-size: 0.95em; color: var(--text-light); line-height: 1.4; display: block;">Ter opções pensadas para quem precisa evitar açúcar, sem abrir mão do sabor e da praticidade.</span>
+                    </div>
+
+                    <!-- Bonus 2 -->
+                    <div class="bonus-card-premium">
+                        <div class="bonus-icon-wrapper"
+                            style="background: linear-gradient(135deg, #a3f7bf, #0fa36d); padding: 5px;">
+                            <img src="assets/guia_de_adocantes.webp" alt="Adoçantes Naturais na Prática" width="500"
+                                height="500" loading="lazy" decoding="async"
+                                style="width: 100%; height: auto; aspect-ratio: 1/1; object-fit: contain; border-radius: 10px; display: block;">
+                        </div>
+                        <div class="bonus-content">
+                            <h3>Adoçantes Naturais na Prática</h3>
+                            <p>Descubra como escolher e usar corretamente os melhores adoçantes naturais para obter
+                                resultados perfeitos e sem culpa em suas receitas</p>
+                            <div style="margin-top: 10px; font-size: 1.1rem; font-weight: 700;">
+                                <span style="text-decoration: line-through; color: rgba(255,255,255,0.5); font-size: 0.9em; margin-right: 8px;">R$ 47,00</span>
+                                <span style="color: var(--accent);">R$ 00,00</span>
                             </div>
                         </div>
-                        <div class="ideal-item" style="align-items: flex-start;">
-                            <div class="ideal-icon" style="margin-top: 5px;">💰</div>
-                            <div class="ideal-text">
-                                <span style="display: block; font-weight: 700; margin-bottom: 4px; color: var(--primary);">Faturar com doces saudáveis em casa</span>
-                                <span style="font-size: 0.95em; color: var(--text-light); line-height: 1.4; display: block;">Produzir sobremesas com alto valor percebido para vender e aproveitar um mercado cada vez mais em crescimento.</span>
+                    </div>
+
+                    <!-- Bonus 3 -->
+                    <div class="bonus-card-premium">
+                        <div class="bonus-icon-wrapper"
+                            style="background: linear-gradient(135deg, #f7baef, #c840af); padding: 5px;">
+                            <img src="assets/dicas_de_preparo.webp" alt="Dicas de Preparo e Conservação" width="500"
+                                height="500" loading="lazy" decoding="async"
+                                style="width: 100%; height: auto; aspect-ratio: 1/1; object-fit: contain; border-radius: 10px; display: block;">
+                        </div>
+                        <div class="bonus-content">
+                            <h3>Dicas de Preparo e Conservação</h3>
+                            <p>Aumente a durabilidade e o sabor das suas receitas com dicas práticas e eficientes de
+                                preparo e armazenamento</p>
+                            <div style="margin-top: 10px; font-size: 1.1rem; font-weight: 700;">
+                                <span style="text-decoration: line-through; color: rgba(255,255,255,0.5); font-size: 0.9em; margin-right: 8px;">R$ 47,00</span>
+                                <span style="color: var(--accent);">R$ 00,00</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section><section class="benefits-section" style="background: #fdfaf7; padding: 3rem 0;">
-        <div class="container">
-            <h2 class="section-title text-center">Por que essas receitas são para você?</h2>
-
-            <div class="benefits-grid">
-                <div class="benefit-card hover-glow">
-                    <i class="fa-solid fa-heart-circle-check icon-b"></i>
-                    <h3>Saúde sem abrir mão do sabor <span style="display: block; font-size: 0.85rem; font-weight: 500; opacity: 0.85; margin-top: 5px; color: var(--text-light);">(ideal para quem está de dieta ou quer reduzir o açúcar)</span></h3>
-                    <p>Substituímos ingredientes tradicionais por opções mais saudáveis, para você continuar comendo doce sem culpa ou prejuízo nos resultados.</p>
+        </section>
+        <section class="testimonials-section" style="overflow: hidden;">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 2rem;">
+                    <h2 class="section-title">Resultados de nossas <span class="highlight">alunas</span></h2>
                 </div>
-                <div class="benefit-card hover-glow">
-                    <i class="fa-solid fa-basket-shopping icon-b"></i>
-                    <h3>Ingredientes simples para o dia a dia <span style="display: block; font-size: 0.85rem; font-weight: 500; opacity: 0.85; margin-top: 5px; color: var(--text-light);">(perfeito para mães e famílias)</span></h3>
-                    <p>Receitas feitas com ingredientes acessíveis, fáceis de encontrar e ideais para preparar opções mais seguras e nutritivas em casa.</p>
-                </div>
-                <div class="benefit-card hover-glow">
-                    <i class="fa-solid fa-leaf icon-b"></i>
-                    <h3>Opções pensadas para quem não pode consumir açúcar</h3>
-                    <p>Receitas adaptadas para quem precisa evitar açúcar, sem abrir mão do prazer de comer um doce saboroso.</p>
-                </div>
-                <div class="benefit-card hover-glow">
-                    <i class="fa-solid fa-sack-dollar icon-b"></i>
-                    <h3>Praticidade para produzir e até vender</h3>
-                    <p>Preparos rápidos e fáceis que permitem fazer em casa com agilidade, seja para consumo próprio ou para gerar renda com doces saudáveis.</p>
-                </div>
-            </div>
-        </div>
-    </section><section class="proof-section">
-        <div class="container proof-grid">
-            <div class="proof-img">
-                <img src="assets/torta.webp" alt="Delicioso doces saudáveis" width="1024" height="1024" loading="lazy" decoding="async" style="width: 100%; height: auto; display: block;">
-                
-            </div>
-            <div class="proof-text">
-                <h2 class="section-title">Sinta o sabor de um doce de verdade, <span class="highlight">sem culpa, sem restrições e sem abrir mão do prazer</span></h2>
-                <p>Imagine morder um doce cremoso, com textura perfeita e sabor equilibrado…<br>
-                Sem gosto artificial, sem amargor e sem aquele "sabor fit" ruim.</p>
-
-                <p style="font-weight: 600; color: var(--primary);">Isso não é "doce saudável sem graça".<br>
-                É doce de verdade, só que feito da forma certa.</p>
-
-                <div class="features-list">
-                    <div class="feature-item"><i class="fa-solid fa-check"></i> Sem açúcar refinado</div>
-                    <div class="feature-item"><i class="fa-solid fa-check"></i> Sem glúten</div>
-                    <div class="feature-item"><i class="fa-solid fa-check"></i> Zero lactose</div>
-                    <div class="feature-item"><i class="fa-solid fa-check"></i> Fácil e rápido de fazer</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Recipes Carousel -->
-    <section class="recipes-carousel-section" style="overflow: hidden; padding: 3rem 0; background: var(--bg-light);">
-        <div class="container text-center" style="margin-bottom: 2rem;">
-            <h2 class="section-title">Olha o que você vai conseguir preparar com essa <span class="highlight">coleção de receitas</span></h2>
-            <p class="subheadline fade-up delay-1" style="font-size: 1.2rem; color: var(--text-dark); max-width: 700px; margin: 1rem auto 0 auto;">Doces incríveis, fáceis de fazer e pensados para eliminar o açúcar sem abrir mão do sabor</p>
-        </div>
-        <div class="carousel-wrapper" style="background: transparent; padding: 0 0 1rem 0;">
-            <div class="carousel-track" style="animation-duration: 48s;">
-                <!-- Set 1 -->
-                <img src="assets/receita01.webp" alt="Receita 1" class="recipe-img" width="500" height="500">
-                <img src="assets/receita02.webp" alt="Receita 2" class="recipe-img" width="500" height="500">
-                <img src="assets/receita03.webp" alt="Receita 3" class="recipe-img" width="500" height="500">
-                <img src="assets/receita04.webp" alt="Receita 4" class="recipe-img" width="500" height="500">
-                <img src="assets/receita05.webp" alt="Receita 5" class="recipe-img" width="500" height="500">
-                <img src="assets/receita06.webp" alt="Receita 6" class="recipe-img" width="500" height="500">
-                <img src="assets/receita07.webp" alt="Receita 7" class="recipe-img" width="500" height="500">
-                <img src="assets/receita08.webp" alt="Receita 8" class="recipe-img" width="500" height="500">
-                <!-- Set 2 -->
-                <img src="assets/receita01.webp" alt="Receita 1" class="recipe-img" width="500" height="500">
-                <img src="assets/receita02.webp" alt="Receita 2" class="recipe-img" width="500" height="500">
-                <img src="assets/receita03.webp" alt="Receita 3" class="recipe-img" width="500" height="500">
-                <img src="assets/receita04.webp" alt="Receita 4" class="recipe-img" width="500" height="500">
-                <img src="assets/receita05.webp" alt="Receita 5" class="recipe-img" width="500" height="500">
-                <img src="assets/receita06.webp" alt="Receita 6" class="recipe-img" width="500" height="500">
-                <img src="assets/receita07.webp" alt="Receita 7" class="recipe-img" width="500" height="500">
-                <img src="assets/receita08.webp" alt="Receita 8" class="recipe-img" width="500" height="500">
-            </div>
-        </div>
-    </section>
-<section class="bonus-section" id="bonus">
-        <div class="container">
-            <div class="text-center">
-                <span class="badge" style="background: rgba(235, 182, 108, 0.2); color: var(--accent); margin-bottom: 1rem;">OFERTA
-                    IMPERDÍVEL</span>
-                <h2 class="section-title text-white">Garantindo agora, você leva <span class="highlight-gold">3 BÔNUS
-                        EXCLUSIVOS</span></h2>
-                <p style="color: rgba(255,255,255,0.85); font-size: 1rem; font-weight: 600; margin-top: 0.5rem;">⏰ Encerra em: <span id="bonus-date"></span></p>
             </div>
 
-            <div class="bonus-grid-premium">
-                <!-- Bonus 1 -->
-                <div class="bonus-card-premium">
-                    <div class="bonus-icon-wrapper" style="background: linear-gradient(135deg, var(--accent), #d4953e); padding: 5px;">
-                        <img src="assets/guia_de_substituicoes.webp" alt="Guia de Substituições Inteligentes" width="500" height="500" loading="lazy" decoding="async" style="width: 100%; height: auto; aspect-ratio: 1/1; object-fit: contain; border-radius: 10px; display: block;">
+            <div class="carousel-wrapper">
+                <div class="carousel-track" style="animation-duration: 96s;">
+                    <!-- Set 1 -->
+                    <img src="assets/depoimento01.webp" alt="Depoimento 1" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento02.webp" alt="Depoimento 2" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento03.webp" alt="Depoimento 3" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento04.webp" alt="Depoimento 4" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento05.webp" alt="Depoimento 5" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento06.webp" alt="Depoimento 6" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento07.webp" alt="Depoimento 7" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento08.webp" alt="Depoimento 8" class="carousel-img" width="391"
+                        height="719">
+                    <!-- Set 2 -->
+                    <img src="assets/depoimento01.webp" alt="Depoimento 1" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento02.webp" alt="Depoimento 2" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento03.webp" alt="Depoimento 3" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento04.webp" alt="Depoimento 4" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento05.webp" alt="Depoimento 5" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento06.webp" alt="Depoimento 6" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento07.webp" alt="Depoimento 7" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento08.webp" alt="Depoimento 8" class="carousel-img" width="391"
+                        height="719">
+                    <!-- Set 3 -->
+                    <img src="assets/depoimento01.webp" alt="Depoimento 1" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento02.webp" alt="Depoimento 2" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento03.webp" alt="Depoimento 3" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento04.webp" alt="Depoimento 4" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento05.webp" alt="Depoimento 5" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento06.webp" alt="Depoimento 6" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento07.webp" alt="Depoimento 7" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento08.webp" alt="Depoimento 8" class="carousel-img" width="391"
+                        height="719">
+                    <!-- Set 4 -->
+                    <img src="assets/depoimento01.webp" alt="Depoimento 1" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento02.webp" alt="Depoimento 2" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento03.webp" alt="Depoimento 3" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento04.webp" alt="Depoimento 4" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento05.webp" alt="Depoimento 5" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento06.webp" alt="Depoimento 6" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento07.webp" alt="Depoimento 7" class="carousel-img" width="391"
+                        height="719">
+                    <img src="assets/depoimento08.webp" alt="Depoimento 8" class="carousel-img" width="391"
+                        height="719">
+                </div>
+            </div>
+        </section>
+        <section class="guarantee-section" style="padding: 3rem 0 0 0; background: var(--bg-light); border: none;">
+            <div class="container text-center" style="max-width: 800px; padding: 1rem 2rem; margin: 0 auto;">
+                <i class="fa-solid fa-shield-halved"
+                    style="font-size: 4rem; color: var(--accent); margin-bottom: 1.5rem;"></i>
+                <h2 class="section-title" style="margin-bottom: 1rem;">Risco Zero: <span class="highlight">Garantia de 7
+                        Dias</span></h2>
+                <p style="color: var(--text-dark); line-height: 1.8; font-size: 1.1rem; margin-bottom: 1rem;">
+                    Nós confiamos tanto no sabor e no resultado dessas receitas que decidimos tirar todo o risco das
+                    suas costas. Você tem <strong>7 dias completos</strong> para testar as receitas na sua própria
+                    cozinha. Se você não amar o sabor, achar muito difícil ou simplesmente se arrepender, basta nos
+                    enviar um único e-mail e nós devolvemos 100% do seu dinheiro. Sem tentar te convencer do contrário.
+                </p>
+
+            </div>
+        </section>
+        <section class="offer-section" id="payment" style="padding: 2rem 0 4rem 0; background: var(--bg-light);">
+            <div class="container">
+
+                <div class="offer-box">
+                    <h2>Seu Acesso Completo</h2>
+                    <div class="price-strikethrough">Valor Normal da Coleção + Bônus: <s>R$ 238,00</s></div>
+
+                    <p class="today-text">Mas, Apenas HOJE, você leva tudo por:</p>
+
+                    <div class="final-price" style="margin-bottom: 0;"><span
+                            style="font-size: 0.5em; font-weight: 500; vertical-align: middle;">9x</span> R$ 8,80</div>
+                    <p
+                        style="text-align: center; font-size: 1.3rem; font-weight: 600; color: var(--primary); margin-top: 0; margin-bottom: 5px;">
+                        ou R$ 67,00 à vista</p>
+                    <p
+                        style="text-align: center; font-size: 1rem; opacity: 1; margin-top: 0; margin-bottom: 2rem; font-weight: 600; color: var(--green);">
+                        (Menos de R$0,70 por receita)</p>
+
+                    <div class="urgency-banner" style="margin: 0 auto 1.5rem auto;">
+                        ⚠️ Atenção: esta oferta é por tempo limitado. Em breve, o valor volta ao original.
                     </div>
-                    <div class="bonus-content">
-                        <h3>Guia de Substituições Inteligentes</h3>
-                        <p>Aprenda como adaptar qualquer receita para uma versão mais saudável, garantindo sabor e nutrição em suas criações culinárias</p>
-                    </div>
-                </div>
 
-                <!-- Bonus 2 -->
-                <div class="bonus-card-premium">
-                    <div class="bonus-icon-wrapper" style="background: linear-gradient(135deg, #a3f7bf, #0fa36d); padding: 5px;">
-                        <img src="assets/guia_de_adocantes.webp" alt="Adoçantes Naturais na Prática" width="500" height="500" loading="lazy" decoding="async" style="width: 100%; height: auto; aspect-ratio: 1/1; object-fit: contain; border-radius: 10px; display: block;">
-                    </div>
-                    <div class="bonus-content">
-                        <h3>Adoçantes Naturais na Prática</h3>
-                        <p>Descubra como escolher e usar corretamente os melhores adoçantes naturais para obter resultados perfeitos e sem culpa em suas receitas</p>
-                    </div>
+                    <a href="https://pay.hotmart.com/P105611288V" class="cta-btn block-btn pulse-fast">SIM!
+                        QUERO AS RECEITAS + BÔNUS <i class="fa-solid fa-cart-shopping"></i></a>
+                    <p class="guarantee-text"><i class="fa-solid fa-shield-halved"></i> 7 Dias de Garantia
+                        Incondicional. Se
+                        não gostar, devolvemos 100% do seu dinheiro.</p>
                 </div>
-
-                <!-- Bonus 3 -->
-                <div class="bonus-card-premium">
-                    <div class="bonus-icon-wrapper" style="background: linear-gradient(135deg, #f7baef, #c840af); padding: 5px;">
-                        <img src="assets/dicas_de_preparo.webp" alt="Dicas de Preparo e Conservação" width="500" height="500" loading="lazy" decoding="async" style="width: 100%; height: auto; aspect-ratio: 1/1; object-fit: contain; border-radius: 10px; display: block;">
+            </div>
+        </section>
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title text-center">Perguntas Frequentes</h2>
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <div class="faq-question">As receitas são realmente saudáveis? <i
+                                class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer">Sim! Todas as receitas foram pensadas para serem sem açúcar, sem glúten
+                            e
+                            zero lactose, usando ingredientes mais naturais e equilibrados.</div>
                     </div>
-                    <div class="bonus-content">
-                        <h3>Dicas de Preparo e Conservação</h3>
-                        <p>Aumente a durabilidade e o sabor das suas receitas com dicas práticas e eficientes de preparo e armazenamento</p>
+                    <div class="faq-item">
+                        <div class="faq-question">Vou sentir diferença no sabor? <i
+                                class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">As receitas foram desenvolvidas para manter o máximo de sabor possível,
+                            muito próximas dos doces originais, você vai se surpreender!</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">É difícil de fazer? Preciso saber cozinhar? <i
+                                class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer">Não! As receitas são simples, práticas e pensadas para iniciantes. Mesmo
+                            quem não tem experiência consegue fazer.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Os ingredientes são caros ou difíceis de encontrar? <i
+                                class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer">Não. Você encontra facilmente em mercados comuns ou lojas de produtos
+                            naturais, e a lista de compras ajuda muito nisso.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Em quanto tempo recebo? <i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer">O arquivo é enviado imediatamente após o pagamento. Você pode abrir no
+                            celular, computador ou tablet, e também imprimir, se preferir.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Onde vou receber? <i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer">A Coleção é um arquivo 100% digital em formato PDF. Você irá receber o
+                            acesso imediatamente no seu WhatsApp e também no seu E-mail, podendo baixar no seu celular e
+                            até imprimir todo o material se você quiser!</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section><section class="testimonials-section" style="overflow: hidden;">
-        <div class="container">
-            <div class="text-center" style="margin-bottom: 2rem;">
-                <h2 class="section-title">Resultados de nossas <span class="highlight">alunas</span></h2>
-            </div>
-        </div>
-
-        <div class="carousel-wrapper">
-            <div class="carousel-track" style="animation-duration: 96s;">
-                <!-- Set 1 -->
-                <img src="assets/depoimento01.webp" alt="Depoimento 1" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento02.webp" alt="Depoimento 2" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento03.webp" alt="Depoimento 3" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento04.webp" alt="Depoimento 4" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento05.webp" alt="Depoimento 5" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento06.webp" alt="Depoimento 6" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento07.webp" alt="Depoimento 7" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento08.webp" alt="Depoimento 8" class="carousel-img" width="391" height="719">
-                <!-- Set 2 -->
-                <img src="assets/depoimento01.webp" alt="Depoimento 1" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento02.webp" alt="Depoimento 2" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento03.webp" alt="Depoimento 3" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento04.webp" alt="Depoimento 4" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento05.webp" alt="Depoimento 5" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento06.webp" alt="Depoimento 6" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento07.webp" alt="Depoimento 7" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento08.webp" alt="Depoimento 8" class="carousel-img" width="391" height="719">
-                <!-- Set 3 -->
-                <img src="assets/depoimento01.webp" alt="Depoimento 1" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento02.webp" alt="Depoimento 2" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento03.webp" alt="Depoimento 3" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento04.webp" alt="Depoimento 4" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento05.webp" alt="Depoimento 5" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento06.webp" alt="Depoimento 6" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento07.webp" alt="Depoimento 7" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento08.webp" alt="Depoimento 8" class="carousel-img" width="391" height="719">
-                <!-- Set 4 -->
-                <img src="assets/depoimento01.webp" alt="Depoimento 1" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento02.webp" alt="Depoimento 2" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento03.webp" alt="Depoimento 3" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento04.webp" alt="Depoimento 4" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento05.webp" alt="Depoimento 5" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento06.webp" alt="Depoimento 6" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento07.webp" alt="Depoimento 7" class="carousel-img" width="391" height="719">
-                <img src="assets/depoimento08.webp" alt="Depoimento 8" class="carousel-img" width="391" height="719">
-            </div>
-        </div>
-    </section><section class="guarantee-section" style="padding: 3rem 0 0 0; background: var(--bg-light); border: none;">
-        <div class="container text-center" style="max-width: 800px; padding: 1rem 2rem; margin: 0 auto;">
-            <i class="fa-solid fa-shield-halved" style="font-size: 4rem; color: var(--accent); margin-bottom: 1.5rem;"></i>
-            <h2 class="section-title" style="margin-bottom: 1rem;">Risco Zero: <span class="highlight">Garantia de 7 Dias</span></h2>
-            <p style="color: var(--text-dark); line-height: 1.8; font-size: 1.1rem; margin-bottom: 1rem;">
-                Nós confiamos tanto no sabor e no resultado dessas receitas que decidimos tirar todo o risco das suas costas. Você tem <strong>7 dias completos</strong> para testar as receitas na sua própria cozinha. Se você não amar o sabor, achar muito difícil ou simplesmente se arrepender, basta nos enviar um único e-mail e nós devolvemos 100% do seu dinheiro. Sem tentar te convencer do contrário.
-            </p>
-            
-        </div>
-    </section><section class="offer-section" id="payment" style="padding: 2rem 0 4rem 0; background: var(--bg-light);">
-        <div class="container">
-
-            <div class="offer-box">
-                <h2>Seu Acesso Completo</h2>
-                <div class="price-strikethrough">Valor Normal da Coleção: <s>R$ 97,00</s></div>
-
-                <p class="today-text">Mas, Apenas HOJE, você leva tudo por:</p>
-
-                <div class="final-price" style="margin-bottom: 0;"><span style="font-size: 0.5em; font-weight: 500; vertical-align: middle;">9x</span> R$ 8,80</div>
-                <p style="text-align: center; font-size: 1.3rem; font-weight: 600; color: var(--primary); margin-top: 0; margin-bottom: 5px;">ou R$ 67,00 à vista</p>
-                <p style="text-align: center; font-size: 1rem; opacity: 1; margin-top: 0; margin-bottom: 2rem; font-weight: 600; color: var(--green);">
-                    (Menos de R$0,70 por receita)</p>
-
-                <div class="urgency-banner" style="margin: 0 auto 1.5rem auto;">
-                ⚠️ Atenção: esta oferta é por tempo limitado. Em breve, o valor volta ao original.
-            </div>
-
-                <a href="https://pay.hotmart.com/P105611288V" class="cta-btn block-btn pulse-fast">SIM!
-                    QUERO AS RECEITAS + BÔNUS <i class="fa-solid fa-cart-shopping"></i></a>
-                <p class="guarantee-text"><i class="fa-solid fa-shield-halved"></i> 7 Dias de Garantia Incondicional. Se
-                    não gostar, devolvemos 100% do seu dinheiro.</p>
-            </div>
-        </div>
-    </section><section class="faq-section">
-        <div class="container">
-            <h2 class="section-title text-center">Perguntas Frequentes</h2>
-            <div class="faq-accordion">
-                <div class="faq-item">
-                    <div class="faq-question">As receitas são realmente saudáveis? <i class="fa-solid fa-chevron-down"></i></div>
-                    <div class="faq-answer">Sim! Todas as receitas foram pensadas para serem sem açúcar, sem glúten e
-                        zero lactose, usando ingredientes mais naturais e equilibrados.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Vou sentir diferença no sabor? <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">As receitas foram desenvolvidas para manter o máximo de sabor possível,
-                        muito próximas dos doces originais, você vai se surpreender!</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">É difícil de fazer? Preciso saber cozinhar? <i class="fa-solid fa-chevron-down"></i></div>
-                    <div class="faq-answer">Não! As receitas são simples, práticas e pensadas para iniciantes. Mesmo
-                        quem não tem experiência consegue fazer.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Os ingredientes são caros ou difíceis de encontrar? <i class="fa-solid fa-chevron-down"></i></div>
-                    <div class="faq-answer">Não. Você encontra facilmente em mercados comuns ou lojas de produtos
-                        naturais, e a lista de compras ajuda muito nisso.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Em quanto tempo recebo? <i class="fa-solid fa-chevron-down"></i></div>
-                    <div class="faq-answer">O arquivo é enviado imediatamente após o pagamento. Você pode abrir no
-                        celular, computador ou tablet, e também imprimir, se preferir.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Onde vou receber? <i class="fa-solid fa-chevron-down"></i></div>
-                    <div class="faq-answer">A Coleção é um arquivo 100% digital em formato PDF. Você irá receber o acesso imediatamente no seu WhatsApp e também no seu E-mail, podendo baixar no seu celular e até imprimir todo o material se você quiser!</div>
-                </div>
-            </div>
-        </div>
-    </section></main>
+        </section>
+    </main>
     <footer>
         <div class="container text-center">
             <p>© 2026 - Receitas Saudáveis - Todos os direitos reservados.</p>
-            <p style="margin-top: 0.5rem; margin-bottom: 1rem; font-size: 0.85rem; color: #bbb; max-width: 800px; margin-left: auto; margin-right: auto;">É expressamente proibida a cópia ou reprodução deste produto, sujeito às penalidades do Art. 184 do Código Penal e da Lei 9.610/98 (Lei dos Direitos Autorais).</p>
+            <p
+                style="margin-top: 0.5rem; margin-bottom: 1rem; font-size: 0.85rem; color: #bbb; max-width: 800px; margin-left: auto; margin-right: auto;">
+                É expressamente proibida a cópia ou reprodução deste produto, sujeito às penalidades do Art. 184 do
+                Código Penal e da Lei 9.610/98 (Lei dos Direitos Autorais).</p>
             <p style="margin-bottom: 1rem;">CNPJ: 63.532.613/0001-90</p>
             <p class="policies"><a href="#">Termos de Uso</a> | <a href="#">Política de Privacidade</a></p>
         </div>
@@ -521,10 +1076,20 @@
     </a>
 
     <script src="main.js" defer=""></script>
-        <noscript><link rel="stylesheet" href="style.css"></noscript>
-        <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap" rel="stylesheet"></noscript>
-        <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"></noscript>
-    
+    <noscript>
+        <link rel="stylesheet" href="style.css">
+    </noscript>
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap"
+            rel="stylesheet">
+    </noscript>
+    <noscript>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    </noscript>
 
 
-</body></html>
+
+</body>
+
+</html>
