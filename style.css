@@ -682,7 +682,7 @@ footer p {
     .headline { font-size: 2.8rem; }
     .hero-image { max-width: 100%; margin: 0 auto 2rem; }
     .hero::before { width: 100vw; height: 100vw; top: -10%; left: 0%; }
-    .hero { margin-top: 65px; }
+    .hero { margin-top: 55px; }
     
     .proof-grid { grid-template-columns: 1fr; }
     .proof-img { margin-bottom: 2rem; }
@@ -697,7 +697,7 @@ footer p {
 @media (max-width: 576px) {
     /* Redução de espaçamentos verticais entre blocos */
     section { padding: 1.5rem 0 !important; }
-    .hero { margin-top: 90px !important; padding: 1.5rem 0 !important; }
+    .hero { margin-top: 50px !important; padding: 1.5rem 0 !important; }
     .offer-section { padding: 1rem 0 2rem 0 !important; }
     .guarantee-section { padding: 1.5rem 0 0 0 !important; }
     .testimonials-section { padding: 1.5rem 0 0 0 !important; }
