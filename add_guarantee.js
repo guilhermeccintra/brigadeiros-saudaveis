@@ -10,7 +10,7 @@ const guaranteeHtml = `    <!-- Guarantee Section -->
             <p style="color: #555; line-height: 1.8; font-size: 1.1rem; margin-bottom: 2.5rem;">
                 Eu confio tanto no sabor e no resultado dessas receitas que decidi tirar todo o risco das suas costas. Você tem <strong>7 dias completos</strong> para testar as receitas na sua própria cozinha. Se você não amar o sabor, achar muito difícil ou simplesmente se arrepender, basta me enviar um único e-mail e eu devolvo 100% do seu dinheiro. Sem tentar te convencer do contrário.
             </p>
-            <a href="https://pay.lowify.com.br/checkout?product_id=BT71y8" class="cta-btn pulse delay-2">QUERO TESTAR AS RECEITAS SEM RISCO <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="https://pay.hotmart.com/P105611288V?checkoutMode=10" class="cta-btn pulse delay-2">QUERO TESTAR AS RECEITAS SEM RISCO <i class="fa-solid fa-arrow-right"></i></a>
         </div>
     </section>
 `;
