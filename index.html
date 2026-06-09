@@ -1891,6 +1891,17 @@ footer p {
 
 
 
+    <script>
+        let viewContentFired = false;
+        window.addEventListener('scroll', function() {
+            if (!viewContentFired && window.scrollY > 100) {
+                if (typeof fbq === 'function') {
+                    fbq('track', 'ViewContent');
+                }
+                viewContentFired = true;
+            }
+        });
+    </script>
 </body>
 
 </html>
